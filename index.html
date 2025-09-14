@@ -130,10 +130,17 @@ may you always be happy and healthy through out your life and try to be that one
     <input type="file" id="photoUpload" accept="image/*" multiple />
   </div>
 
-  <audio id="song" autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
-  </audio>
+  <audio id="song" autoplay loop muted>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+  document.addEventListener("click", () => {
+    const song = document.getElementById("song");
+    song.muted = false;
+    song.play();
+  });
+</script>
   <script>
     let slideIndex = 0;
     let slides = document.getElementsByClassName("slides");
@@ -214,3 +221,4 @@ may you always be happy and healthy through out your life and try to be that one
   </script>
 </body>
 </html>
+

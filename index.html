@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday rakshana!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff4081;
+      margin-top: 20px;
+      animation: bounce 1s infinite alternate;
+    }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+    .main-image {
+      width: 300px;
+      border-radius: 20px;
+      margin: 20px auto;
+      display: block;
+      border: 5px solid gold;
+      animation: sparkle 2s infinite;
+    }
+    .slideshow {
+      max-width: 400px;
+      margin: 20px auto;
+      animation: sparkle 2s infinite;
+    }
+    .slides {
+      display: none;
+      width: 100%;
+      border-radius: 15px;
+      border: 3px solid #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    @keyframes sparkle {
+      0%, 100% { box-shadow: 0 0 20px gold; }
+      50% { box-shadow: 0 0 40px white; }
+    }
+    .message {
+      font-size: 1.2em;
+      background: rgba(255, 255, 255, 0.8);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      color: #333;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .upload-container { margin: 20px; }
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 50px;
+      height: 70px;
+      background: red;
+      border-radius: 50%;
+      animation: float 6s linear infinite;
+      z-index: -1;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100vh); }
+    }
+    .glitter {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: gold;
+      border-radius: 50%;
+      opacity: 0.8;
+      pointer-events: none;
+      animation: glitterAnim 1s linear infinite;
+    }
+    @keyframes glitterAnim {
+      0% { transform: translateY(0) scale(1); opacity: 0.8; }
+      100% { transform: translateY(-20px) scale(0.5); opacity: 0; }
+    }
+    canvas#confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+  <h1>🎉 Happy Birthday rakshana ! 🎉</h1>
+  <img src="rakshu1.png.png" alt="rakshu" class="main-image" />
+
+  <div class="message">
+happy birthday shunaaaa !!!!
+may you always be happy and healthy through out your life and try to be that one naughty and mischievous kid like always andddd I am so great full to have a friend like you thank you for being by my side for these two years as a person who takes care of me and making me happy in all sorts of situation , I will always remember each and every funny thing we did in these two years , andddd I hope you to study will and get wonderful friends in ap and achieve all your dreams and I also hope u enjoy each and every moment of your life , anddd if you ever feel lonely or sad don't forget that your parents , sisters and we (friends) are there for you , and eat properly and drink water dont get dehydrated seriya , health comes 1st before studies there wont be any one to take care of you personally there so you have to take of your self well , and avlodha i guess nalla padi bore adichudhuna enku call pannu illa msg pannu moste ah adikadhu when ur classes begin and don't feel stressed or don't over think seriya .........i will always miss you cause no one can replace you and i have had sone of my best memoirs with you thank you........ enjoy this birthday and happy 18..... and 18+ nu loosu mari edhachu pannadha enadha 18 analum nee oru childish papa dha seriya ( who gets happy easly) sooooo edhu podhum nu nanikaren so yeah happy happy 18 th birthday rakshana aka - shuna,boo boo,rakshu and mental 
+    
+  </div>
+
+  <div class="slideshow" id="slideshow">
+    <img class="slides" src="rakshu2.png.png" />
+    <img class="slides" src="rakshu3.png.png" />
+    <img class="slides" src="rakshu4.png.png" />
+    <img class="slides" src="rakshu5.png.png" />
+    <img class="slides" src="rakshu6.png.png" />
+    <img class="slides" src="rakshu7.png.png" />
+    <img class="slides" src="rakshu8.png.png" />
+    <img class="slides" src="rakshu9.png.png" />
+    <img class="slides" src="rakshu10.png.png" />
+    <img class="slides" src="rakshu11.png.png" />
+    <img class="slides" src="rakshu12.png.png" />
+    <img class="slides" src="rakshu13.png.png" />
+    <img class="slides" src="rakshu14.png.png" />
+    <img class="slides" src="rakshu15.png.png" />
+  </div>
+
+  <div class="upload-container">
+    <input type="file" id="photoUpload" accept="image/*" multiple />
+  </div>
+
+  <audio id="song" autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    let slideIndex = 0;
+    let slides = document.getElementsByClassName("slides");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+    showSlides();
+
+    for (let i = 0; i < 20; i++) {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = Math.random() * window.innerWidth + 'px';
+      balloon.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      balloon.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(balloon);
+
+      setInterval(() => {
+        const glitter = document.createElement('div');
+        glitter.classList.add('glitter');
+        glitter.style.left = (balloon.offsetLeft + Math.random() * 30) + 'px';
+        glitter.style.top = (balloon.offsetTop + 50) + 'px';
+        document.body.appendChild(glitter);
+        setTimeout(() => glitter.remove(), 1000);
+      }, 200);
+    }
+
+    const photoUpload = document.getElementById('photoUpload');
+    const slideshow = document.getElementById('slideshow');
+
+    photoUpload.addEventListener('change', (event) => {
+      const files = event.target.files;
+      for (let i = 0; i < files.length; i++) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.createElement('img');
+          img.classList.add('slides');
+          img.src = e.target.result;
+          slideshow.appendChild(img);
+          slides = document.getElementsByClassName("slides");
+        };
+        reader.readAsDataURL(files[i]);
+      }
+    });
+
+    const confettiCanvas = document.getElementById('confetti');
+    const ctx = confettiCanvas.getContext('2d');
+    confettiCanvas.width = window.innerWidth;
+    confettiCanvas.height = window.innerHeight;
+
+    const confettiPieces = Array.from({length: 100}).map(() => ({
+      x: Math.random() * confettiCanvas.width,
+      y: Math.random() * confettiCanvas.height - confettiCanvas.height,
+      r: Math.random() * 6 + 4,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() * 2 + 2) * 0.5,
+      color: `hsl(${Math.random() * 360}, 70%, 50%)`
+    }));
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      confettiPieces.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.y > confettiCanvas.height) p.y = -10;
+      });
+      requestAnimationFrame(drawConfetti);
+    }
+    drawConfetti();
+  </script>
+</body>
+</html>
